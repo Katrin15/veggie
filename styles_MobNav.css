@@ -249,11 +249,16 @@ header h1 {
 //	}
 //}
 */
+.mobile_menu_active {
+  left: -150px !important;
+}
 header .container {
   position: relative;
   width: calc(100% + 150px);
-  -webkit-transition: transform 0.5s ease-in;
-  transition: transform 0.5s ease-in;
+  top: 0;
+  left: 0;
+  -webkit-transition: left 1s ease-in;
+  transition: left 1s ease-in;
 }
 header .container .pull_right {
   position: relative;
@@ -315,11 +320,6 @@ header .container .mobile_nav .MobileMenu li a {
   width: 150px;
   line-height: 1.5rem;
   vertical-align: middle;
-}
-.mobile_menu_active {
-  -ms-transform: translateX(-150px);
-  -webkit-transform: translateX(-150px);
-  transform: translateX(-150px);
 }
 @media screen and (min-width: 768px) {
   header {
