@@ -298,6 +298,18 @@ header{
 */
 
 //**** MOBILE NAV - 2
+.mobile_menu_active{
+
+	//-ms-transform: translateX(-@mobileMenuWidth);
+	//-webkit-transform: translateX(-@mobileMenuWidth);
+	//transform: translateX(-@mobileMenuWidth);
+
+	//-webkit-transition: transform 0.5s ease-in; 
+    //transition: transform 0.5s ease-in;
+    left: -@mobileMenuWidth !important; 
+
+}
+
 header .container {
 	position: relative;
 	width: ~"calc(100% + @{mobileMenuWidth})";
@@ -306,8 +318,10 @@ header .container {
 	//-webkit-transform: translateX(0);
 	//transform: translateX(0);
 
-	-webkit-transition: transform 0.5s ease-in; 
-    transition: transform 0.5s ease-in;
+	top:0; left:0;
+	-webkit-transition: left 1s ease-in; 
+    transition: left 1s ease-in;
+	
 
 	.pull_right{ position: relative; width: ~"calc(100% - @{mobileMenuWidth})" }
 	.mobile_nav { 
@@ -320,6 +334,7 @@ header .container {
 		width: @mobileMenuWidth;
 
 		z-index: 10;
+		//overflow: hidden;
 		
 
 		.toggleMobileMenu{
@@ -385,12 +400,7 @@ header .container {
 	}
 }
 
-.mobile_menu_active{
 
-	-ms-transform: translateX(-@mobileMenuWidth);
-	-webkit-transform: translateX(-@mobileMenuWidth);
-	transform: translateX(-@mobileMenuWidth);
-}
 
 // HEADER от 768 и шире
 @media screen and (min-width: 768px){
