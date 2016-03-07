@@ -310,6 +310,7 @@ header{
 
 }
 
+header{overflow: hidden;}
 header .container {
 	position: relative;
 	width: ~"calc(100% + @{mobileMenuWidth})";
@@ -319,8 +320,8 @@ header .container {
 	//transform: translateX(0);
 
 	top:0; left:0;
-	-webkit-transition: left 1s ease-in; 
-    transition: left 1s ease-in;
+	-webkit-transition: left 0.5s ease-in; 
+    transition: left 0.5s ease-in;
 	
 
 	.pull_right{ position: relative; width: ~"calc(100% - @{mobileMenuWidth})" }
@@ -367,7 +368,7 @@ header .container {
 		.MobileMenu{
 			//height: 100%;
 			position: absolute; top: 0; left:0; bottom: 0;
-			li {
+			/*li {
 				height: 25%;
 
 					background-color: darken(@header_backgr, 10%);
@@ -379,7 +380,7 @@ header .container {
 				  display: inline-block;
 				  height: 100%;
 				  vertical-align: middle;
-				  margin-right: -0.25em; /* Adjusts for spacing */
+				  margin-right: -0.25em; 
 				}
 
 				a {
@@ -393,6 +394,34 @@ header .container {
 					line-height: 1.5rem;
 
 			    	vertical-align: middle;
+			    	
+				}
+			}*/
+			li {
+				height: 25%;
+				width: @mobileMenuWidth;
+
+					
+			    	position: relative;
+			    	background-color: darken(@header_backgr, 10%);
+			    	border-bottom: solid darken(@header_backgr, 20%) 1px;
+			    	border-top: solid lighten(@header_backgr, 20%) 1px;
+			    	.box-sizing;
+
+				a {
+			    	display: inline-block;
+			    	font-size: 1.125rem;
+			    	color: @dishes_font_color;
+			    	width: @mobileMenuWidth;
+			    	position: absolute;
+			    	top:0; left:0; bottom: 0; right: 0;
+			    	margin: auto;
+			    	height: 1.25rem;
+			    	
+
+			    	background-color: darken(@header_backgr, 10%);
+			    	
+			    	
 			    	
 				}
 			}
@@ -411,6 +440,7 @@ header .container {
 
 		.container{
 			width: 100%;// уберем остатки моб меню
+			top:0; left:0;
 		
 			.pull_right{
 				float: right;
@@ -813,6 +843,7 @@ header .container {
 			width: 40%;
 			height: auto;
 			float: right;
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -832,7 +863,7 @@ header .container {
 			& > div {
 				float: left;
 				width: 50%;
-				height: 500px;//min-height: 465px; //50% от ширины картинки!
+				min-height: 465px;//min-height: 465px; //50% от ширины картинки!
 				img{ width: 30%;}
 
 				line-height: 500px;
