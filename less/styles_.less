@@ -54,26 +54,12 @@
 	    display: none;
 	}
 
-	/*#starters:checked ~ .panels #starters-panel, #main:checked ~ .panels #main-panel, #desserts:checked ~ .panels #desserts-panel, #drinks:checked ~ .panels #drinks-panel  {
-	    display: block;
-	} первонач вариант */
-
 	#starters:checked ~ .tabs #starters-panel, #main:checked ~ .tabs #main-panel, #desserts:checked ~ .tabs #desserts-panel, #drinks:checked ~ .tabs #drinks-panel  {
 	    display: block;
 	    z-index: 10;
 	} /*горизонт */
 
-	/*#starters:checked ~ .tabs #starters-panel, #main:checked ~ .tabs #main-panel, #desserts:checked ~ .tabs #desserts-panel, #drinks:checked ~ .tabs #drinks-panel  {
-	    display: block;
-	} вертик */
-	
-
 }
-
-/* http://alistapart.com/article/radio-controlled-web-design 
-http://www.sitepoint.com/implementing-show-moreless-functionality-with-pure-css/
-https://habrahabr.ru/post/174029/
-*/
 
 
 *{margin: 0; padding: 0;}
@@ -161,7 +147,7 @@ h1{
 	display: inline-block;
 	padding: 10px 0 70px;
 	
-	background-image: url(decorative_flourishes_5/pic_150_80mm.svg); //url(decorative_flourishes_5/3_items.svg); decorative_flourishes_5/flourish_87_43.svg
+	background-image: url(../decorative_flourishes_5/pic_150_80mm.svg); //url(decorative_flourishes_5/3_items.svg); decorative_flourishes_5/flourish_87_43.svg
 	background-repeat: no-repeat;
 	background-position: 50% 95%;
 	//background-size: 250px 40px;
@@ -172,7 +158,7 @@ h1{
 
 html, body {height: 100%;}
 header{
-	background: url("images/veg640.png") no-repeat center center;
+	background: url("../images/veg640.png") no-repeat center center;
 	background-size: cover;
 	//background-color: @header_backgr;
 	text-align: center;
@@ -221,92 +207,8 @@ header{
 
 
 
-/*.mobile_nav{
-	position: absolute;
-	//overflow: hidden;
-	top: 10px;
-	right: 10px;
-
-	-webkit-transition: right 0.5s ease-in; 
-    transition: right 0.5s ease-in;
-
-    .toggleMobileMenu{
-		display: block;
-		border: solid @font_color 2px;
-		width: @toggleMobileMenuWidth;
-		height: 35px;
-		cursor: pointer;
-		//float: right;
-
-		position: absolute;
-		top: 0; right: 0;
-
-		span{
-			display: block;
-			width: 30px;
-			height: 5px;
-			margin: 5px;
-			background-color: @font_color;
-			
-			//position: absolute;
-			//left: 5px;
-			//&:nth-child(1){ top: 5px;}
-			//&:nth-child(2){ top: 15px;}
-			//&:nth-child(3){ top: 25px;}
-		}
-	}	
-}
-
-.MobileMenu{
-	position: absolute;
-	top:0;
-	right:-@mobileMenuWidth - 10px;
-	width: @mobileMenuWidth;
-	//-ms-transform: translateX(3000px);
-    //-webkit-transform: translateX(3000px);
-    //transform: translateX(3000px);
-
-    li a {
-	    	display: inline-block;
-	    	font-size: 18px;
-	    	color: @font_color;
-	    	width: @mobileMenuWidth;
-	    	line-height: 40px;
-	    	vertical-align: middle;
-	    	background-color: darken(@header_backgr, 10%);
-	    	border-bottom: solid darken(@header_backgr, 20%) 1px;
-	    	border-top: solid lighten(@header_backgr, 20%) 1px;
-	}
-
-}
-
-.mobile_menu_active{
-	right: @mobileMenuWidth + 10px;
-	color: green;
-
-	.menu1, .menu2, .menu3 {opacity: 0;}
-
-	//.menu1 { transform:rotate(-45deg) translate(0, 20px);}
-	//.menu3 { transform:rotate(45deg) translate(-10px, 10px);}
-	//.menu2 { visibility: hidden;}
-}
-
-//@media screen and (min-width: 640px) and (max-width: 805px){
-//	header ul{
-//		float:right;
-//	}
-//}
-*/
-
 //**** MOBILE NAV - 2
 .mobile_menu_active{
-
-	//-ms-transform: translateX(-@mobileMenuWidth);
-	//-webkit-transform: translateX(-@mobileMenuWidth);
-	//transform: translateX(-@mobileMenuWidth);
-
-	//-webkit-transition: transform 0.5s ease-in; 
-    //transition: transform 0.5s ease-in;
     left: -@mobileMenuWidth !important; 
 
 }
@@ -316,9 +218,6 @@ header .container {
 	position: relative;
 	width: ~"calc(100% + @{mobileMenuWidth})";
 
-	//-ms-transform: translateX(0);
-	//-webkit-transform: translateX(0);
-	//transform: translateX(0);
 
 	top:0; left:0;
 	-webkit-transition: left 0.5s ease-in; 
@@ -357,47 +256,13 @@ header .container {
 				height: 5px;
 				margin: 5px;
 				background-color: @font_color;
-				
-				//position: absolute;
-				//left: 5px;
-				//&:nth-child(1){ top: 5px;}
-				//&:nth-child(2){ top: 15px;}
-				//&:nth-child(3){ top: 25px;}
 			}
 		}
 
 		.MobileMenu{
 			//height: 100%;
 			position: absolute; top: 0; left:0; bottom: 0;
-			/*li {
-				height: 25%;
-
-					background-color: darken(@header_backgr, 10%);
-			    	border-bottom: solid darken(@header_backgr, 20%) 1px;
-			    	border-top: solid lighten(@header_backgr, 20%) 1px;
-			    	.box-sizing;
-				&:before {
-				  content: '';
-				  display: inline-block;
-				  height: 100%;
-				  vertical-align: middle;
-				  margin-right: -0.25em; 
-				}
-
-				a {
-			    	display: inline-block;
-			    	font-size: 1.125rem;
-			    	color: @dishes_font_color;
-			    	width: @mobileMenuWidth;
-			    	//line-height: 40px;
-						//height: 100%;
-					//height: 30px;
-					line-height: 1.5rem;
-
-			    	vertical-align: middle;
-			    	
-				}
-			}*/
+			
 			li {
 				height: 25%;
 				width: @mobileMenuWidth;
@@ -420,10 +285,7 @@ header .container {
 			    	height: 1.25rem;
 			    	
 
-			    	background-color: darken(@header_backgr, 10%);
-			    	
-			    	
-			    	
+			    	background-color: darken(@header_backgr, 10%);  	
 				}
 			}
 		}	
@@ -436,7 +298,7 @@ header .container {
 @media screen and (min-width: 768px){
 
 	header{
-		background: url("images/veg.png") no-repeat center center;
+		background: url("../images/veg.png") no-repeat center center;
 		background-size: cover;
 
 		.container{
@@ -481,7 +343,7 @@ header .container {
 // DISHES желтая полоска
 .dishes{
 	//background-color: @yellow_rag;
-	background-image: url(images/yellow.png);
+	background-image: url(../images/yellow.png);
 	background-size: cover;
 	color: @dishes_font_color;
 	.container{
@@ -772,30 +634,10 @@ header .container {
 
 }
 
-// specials от 1024 и шире
-//@media screen and (min-width: 1024px){
-//	.specials .container{ 
-		////width: 90%; 100%
-		//background: url(decorative_flourishes_5/decorative_flourishes_5_my.svg) repeat-y,
-        //url(decorative_flourishes_5/decorative_flourishes_5_my.svg) repeat-y 100% 0%;
-        //background-size:80px 80px;
-//	}
-//}
-
 // specials от 1200 и шире
 @media screen and (min-width: 1200px){
 	.specials 
 	{
-		/*background-color: transparent;
-		background-image: url("decorative_flourishes_5/decorative_flourishes_5_my.svg");
-		background-size:100px 50px;
-		background-repeat: repeat-y;
-		background-position: 95% -25px;*/
-
-		// decorative_flourishes_5_my.svg
-		//background: url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y 5% 0%, 
-        //        #fff url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y 95% 0%;
-        //        background-size:60px 35px; 
 		.container{ 
 			padding: 0;
 			& > div {
@@ -814,8 +656,8 @@ header .container {
 		//background: url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y 2% 0%, 
          //       #fff url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y 98% 0%;
 
-        background: url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y, 
-        #fff url(decorative_flourishes_5/pic_150_80mm.svg) repeat-y;
+        background: url(../decorative_flourishes_5/pic_150_80mm.svg) repeat-y, 
+        #fff url(../decorative_flourishes_5/pic_150_80mm.svg) repeat-y;
         background-size:@pattern_width @pattern_height;
         background-position: ~"calc(50% - 640px)" 0, ~"calc(50% + 640px)" 0;
 
@@ -827,7 +669,7 @@ header .container {
 // ****************************** 
 // aboutUs
 .aboutUs {
-	background: url(images/bean_sm2.png) no-repeat center center;
+	background: url(../images/bean_sm2.png) no-repeat center center;
 	background-size: cover;
 	text-align: center;
 	//margin-top:15px;
@@ -855,7 +697,7 @@ header .container {
 	.aboutUs{
 		background: @specials_bckgr;
 		.container{
-			background: url(images/bean.png) no-repeat right center;
+			background: url(../images/bean.png) no-repeat right center;
 			background-size: 50% auto;
 			max-width: 1200px;
 
@@ -937,9 +779,7 @@ header .container {
 
 
 	#starters:checked ~ .tabs #starters-tab, #main:checked ~ .tabs #main-tab, #desserts:checked ~ .tabs #desserts-tab, #drinks:checked ~ .tabs #drinks-tab {
-	    background-color: @specials_bckgr; //#fff;
-	    //border: solid transparent 2px;
-	    //border-bottom: 0.3em solid #fff;
+	    background-color: @specials_bckgr; 
 	    cursor: default;
 	}
 
@@ -974,11 +814,10 @@ header .container {
 		.price{
 			position: absolute;
 			left:50%; bottom: 0;
-				//width: 24px;  07.03 в ie стало лучше
-				min-width: 35px;
+			//width: 24px;  07.03 в ie стало лучше
+			min-width: 35px;
 			margin-left: -12px;
 
-			//font-size: 16px; //Сделать mixin
 			font-size: 1rem;
     		font-weight: bold;
 		}
@@ -1009,40 +848,6 @@ header .container {
 @media screen and (min-width: 480px){
 	.vegieMenu{
 
-		/*.raw{
-			.name{
-				display: block;
-				float: left;
-
-				&::after{
-					content: ' ';
-					width: 100%;
-					background-color: blue;
-					display: block;
-				}
-			}
-			
-			//.dot{
-			//	display: block;
-			//	//float: left;
-			//	width: 70%;
-			//	background-color: blue;
-			//}
-			.price{
-				position: relative;
-				margin: 0;
-				left:0; width: 5%;
-				float: right;
-				
-			}
-			.consist{
-				//float: left;
-				width: 100%;
-				text-align: left;
-				i{display: inline-block;}				
-			}
-		}*/
-
 		.upperRaw{
 			display: table;
 			width: 100%;
@@ -1069,7 +874,7 @@ header .container {
 				position: relative; margin: 0; left:0; top:0;
 				padding-left: 3px;
 
-					//min-width: 35px; //ie9 ? перенесено выше
+				//min-width: 35px; //ie9 ? перенесено выше
 			}
 		}
 		.raw{text-align: left;}
@@ -1092,22 +897,12 @@ header .container {
 		}
 
 		.tab {
-		    //padding: 0.5em;
-		    //vertical-align: top;
 		    position: absolute; top: 0; 
 
 		    background-color: transparent;
 
 		    &::after{display: none;}
-
-		    //border: solid transparent 2px;
-		    //.box-sizing;
 		}
-
-		/*#starters-tab { left: 0; }
-		#main-tab { left: 90px;} // 133
-		#desserts-tab { left: 90px + 133px;} // 97
-		#drinks-tab { left: 233px + 97px;} // 81*/
 
 		#starters-tab {	left:54%;
 			
@@ -1127,10 +922,6 @@ header .container {
 			//min-height: 385px;
 		 	& > div {position: absolute; top: 70px; left:0; right: 0; z-index: 1}
 		}
-		/*.panels {
-		    background-color: #fff;
-		    padding: 0.5em;
-		}*/
 
 		.panel {
 		    display: none;
@@ -1155,7 +946,7 @@ header .container {
 			margin: 0 auto;
 			width: 125px; 
 			height: 70px;
-			background: url(decorative_flourishes_5/pic_150_80mm.svg) no-repeat center center;
+			background: url(../decorative_flourishes_5/pic_150_80mm.svg) no-repeat center center;
 			background-size: 125px 70px;
 			content: '';
 			margin-top: 30px;
@@ -1180,7 +971,7 @@ header .container {
 
 // ***** Footer *****
 footer{
-	background: url("images/pear768.png") no-repeat center center;
+	background: url("../images/pear768.png") no-repeat center center;
 	background-size: cover; //ie9
 	.contact{
 		width: 75%;
@@ -1290,7 +1081,7 @@ footer{
 // footer от 768 и шире
 @media screen and (min-width: 768px){
 	footer{
-		background: url("images/pear.png") no-repeat center center;
+		background: url("../images/pear.png") no-repeat center center;
 		background-size: cover; //ie9
 
 		.contact{
