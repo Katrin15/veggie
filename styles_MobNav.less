@@ -1,4 +1,5 @@
 
+
 //  http://bluefish.esy.es/otdykh/veggie/index.html
 
 /* TABS */
@@ -973,7 +974,8 @@ header .container {
 		.price{
 			position: absolute;
 			left:50%; bottom: 0;
-			width: 24px;
+				//width: 24px;  07.03 в ie стало лучше
+				min-width: 35px;
 			margin-left: -12px;
 
 			//font-size: 16px; //Сделать mixin
@@ -1066,6 +1068,8 @@ header .container {
 				display: table-cell;
 				position: relative; margin: 0; left:0; top:0;
 				padding-left: 3px;
+
+					//min-width: 35px; //ie9 ? перенесено выше
 			}
 		}
 		.raw{text-align: left;}
@@ -1163,12 +1167,12 @@ header .container {
 // TABS Menu от 930 и шире - горизонтально
 @media screen and (min-width: 930px){
 	.vegieMenu{
-		.column1, .column2{ display: inline-block; width: 50%; .box-sizing; vertical-align: top;} // колонки в ряд
+		.column1, .column2{ display: inline-block; width: 50%; .box-sizing; vertical-align: top;} // КОЛОНКИ В РЯД
 		.column2 {padding-left: 20px;}
 		.column1 {padding-right: 20px;}
 
 		.radio-tabs {
-			height: 370px; //min-height: 340px; // jquery
+			height: 428px; // 370 + 48px(высота 3 строчек 18*3) + 10px(отступ) когда некоторое пункты меню превращаются в 3 строчки вместо 2-х //min-height: 340px; // jquery
 		}
 	}
 }
@@ -1229,7 +1233,8 @@ footer{
 			width: 64%;	
 			display: inline-block;
 			padding: 10px 0 5px;
-			font-size: 0.875rem;
+				//font-size: 0.875rem;
+				font-size: 1rem; // из за разницы в шрифтах меджу label и input+textarea неровные нижние полоски
 
 			font-family: inherit;
 		}
